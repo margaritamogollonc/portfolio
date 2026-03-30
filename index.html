@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margarita Mogollón — B2B Content Strategist & Writer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0E1E35; --navy-mid: #162840; --navy-light: #1E3A5F;
+    --gold: #C8922A; --gold-light: #E8B84B; --cream: #F5F0E8;
+    --cream-mid: #EDE6D6; --text-dark: #0E1E35; --text-mid: #3A4F6A;
+    --text-muted: #7A8FA6; --white: #FFFFFF; --border: rgba(200,146,42,0.25);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--cream); line-height: 1.7; font-size: 16px; }
+
+  header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 10vw; position: relative; border-bottom: 1px solid var(--border); }
+  .header-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; font-weight: 500; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(48px, 7vw, 88px); font-weight: 600; line-height: 1.05; color: var(--cream); margin-bottom: 32px; }
+  h1 span { color: var(--gold); display: block; }
+  .header-bio { font-size: 18px; color: var(--text-muted); max-width: 620px; line-height: 1.8; margin-bottom: 48px; font-weight: 300; }
+  .header-meta { display: flex; gap: 40px; flex-wrap: wrap; }
+  .meta-item { font-size: 13px; color: var(--text-muted); letter-spacing: 0.05em; }
+  .meta-item strong { display: block; color: var(--cream); font-weight: 500; font-size: 14px; margin-bottom: 2px; }
+  .scroll-hint { position: absolute; bottom: 40px; left: 10vw; font-size: 12px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
+  .scroll-hint::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+
+  section { padding: 100px 10vw; border-bottom: 1px solid var(--border); }
+  .section-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 60px; display: flex; align-items: center; gap: 16px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 400; color: var(--cream); line-height: 1.2; margin-bottom: 24px; }
+
+  .transparency-note { background: rgba(200,146,42,0.08); border: 1px solid rgba(200,146,42,0.3); border-radius: 8px; padding: 20px 28px; margin-bottom: 60px; }
+  .transparency-note p { font-size: 14px; color: var(--cream-mid); line-height: 1.7; font-style: italic; }
+  .transparency-note strong { color: var(--gold); font-style: normal; }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .about-text p { color: var(--text-muted); font-size: 17px; line-height: 1.9; margin-bottom: 20px; font-weight: 300; }
+  .about-text p strong { color: var(--cream); font-weight: 500; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .stat-card { background: var(--navy-mid); padding: 32px 28px; border: 1px solid var(--border); }
+  .stat-card:first-child { border-radius: 8px 0 0 0; } .stat-card:nth-child(2) { border-radius: 0 8px 0 0; }
+  .stat-card:nth-child(3) { border-radius: 0 0 0 8px; } .stat-card:last-child { border-radius: 0 0 8px 0; }
+  .stat-number { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--gold); font-weight: 600; line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .how-i-work { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 8px; padding: 48px; margin-top: 60px; }
+  .how-i-work h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--cream); margin-bottom: 20px; font-weight: 400; }
+  .how-i-work p { color: var(--text-muted); font-size: 16px; line-height: 1.9; font-weight: 300; }
+
+  .portfolio-item { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 8px; padding: 48px; margin-bottom: 16px; position: relative; overflow: hidden; transition: border-color 0.3s; }
+  .portfolio-item:hover { border-color: var(--gold); }
+  .portfolio-item::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--gold); }
+
+  .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+  .item-category { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .item-badge { font-size: 11px; padding: 4px 14px; border-radius: 20px; font-weight: 500; letter-spacing: 0.05em; }
+  .badge-client { background: rgba(200,146,42,0.15); color: var(--gold); border: 1px solid rgba(200,146,42,0.4); }
+  .badge-sample { background: rgba(122,143,166,0.15); color: var(--text-muted); border: 1px solid rgba(122,143,166,0.3); }
+
+  .item-title { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--cream); margin-bottom: 12px; font-weight: 400; line-height: 1.3; }
+  .item-context { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; font-style: italic; }
+  .item-description { color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-bottom: 28px; font-weight: 300; max-width: 720px; }
+
+  .strategic-frame { background: var(--navy); border: 1px solid var(--border); border-radius: 6px; padding: 24px 28px; margin-bottom: 28px; }
+  .frame-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+  .frame-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .frame-item { }
+  .frame-key { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 2px; }
+  .frame-val { font-size: 13px; color: var(--cream-mid); }
+
+  .content-preview { background: var(--navy); border: 1px solid var(--border); border-radius: 6px; padding: 28px 32px; margin-bottom: 28px; }
+  .preview-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+  .preview-text { font-size: 14px; color: var(--cream-mid); line-height: 1.9; font-style: italic; }
+  .preview-text p { margin-bottom: 12px; } .preview-text p:last-child { margin-bottom: 0; }
+
+  .item-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .tag { font-size: 11px; padding: 4px 12px; border: 1px solid var(--border); border-radius: 20px; color: var(--text-muted); letter-spacing: 0.05em; }
+
+  .item-result { padding: 16px 20px; background: rgba(200,146,42,0.08); border-left: 2px solid var(--gold); border-radius: 0 4px 4px 0; }
+  .item-result span { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 4px; }
+  .item-result p { font-size: 14px; color: var(--cream-mid); }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .skill-block { background: var(--navy-mid); border: 1px solid var(--border); padding: 32px; border-radius: 6px; }
+  .skill-block h3 { font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 500; }
+  .skill-block ul { list-style: none; }
+  .skill-block li { font-size: 14px; color: var(--text-muted); padding: 6px 0; border-bottom: 1px solid rgba(200,146,42,0.1); font-weight: 300; }
+  .skill-block li:last-child { border-bottom: none; }
+  .skill-block li::before { content: '—  '; color: var(--gold); font-size: 12px; }
+
+  .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .cert-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px; border: 1px solid var(--border); border-radius: 6px; background: var(--navy-mid); }
+  .cert-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-top: 6px; flex-shrink: 0; }
+  .cert-name { font-size: 14px; color: var(--cream); margin-bottom: 4px; font-weight: 400; }
+  .cert-org { font-size: 12px; color: var(--text-muted); }
+
+  .contact-section { text-align: center; padding: 120px 10vw; }
+  .contact-section h2 { margin-bottom: 16px; }
+  .contact-section p { color: var(--text-muted); font-size: 18px; margin-bottom: 48px; font-weight: 300; }
+  .contact-links { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+  .contact-link { font-size: 14px; color: var(--cream); text-decoration: none; letter-spacing: 0.05em; padding: 14px 32px; border: 1px solid var(--border); border-radius: 4px; transition: all 0.3s; display: inline-block; }
+  .contact-link:hover { border-color: var(--gold); color: var(--gold); }
+  .contact-link.primary { background: var(--gold); border-color: var(--gold); color: var(--navy); font-weight: 500; }
+  .contact-link.primary:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--navy); }
+
+  footer { padding: 32px 10vw; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-size: 13px; color: var(--text-muted); }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); }
+
+  @media (max-width: 768px) {
+    header, section { padding: 60px 6vw; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .cert-grid { grid-template-columns: 1fr; }
+    .portfolio-item { padding: 32px 24px; }
+    .frame-grid { grid-template-columns: 1fr; }
+    .item-header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">B2B Content Strategy & Writing</div>
+  <h1>Margarita<span>Mogollón Caro</span></h1>
+  <p class="header-bio">B2B Content Strategist &amp; Copywriter | SaaS · Cybersecurity · Email Marketing · AI Content Operations</p>
+  <div class="header-meta">
+    <div class="meta-item"><strong>Location</strong>Cartagena, Colombia · Remote</div>
+    <div class="meta-item"><strong>Languages</strong>Spanish (native) · English (professional)</div>
+    <div class="meta-item"><strong>Availability</strong>Immediate · Freelance & Contract</div>
+    <div class="meta-item"><strong>Contact</strong>margarita.mogollonc@gmail.com</div>
+  </div>
+  <div class="scroll-hint">Selected work</div>
+</header>
+
+<section>
+  <div class="section-label">About</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Writing that makes complex ideas impossible to ignore</h2>
+      <p>I bring <strong>10+ years of professional experience in operations, project management, and B2B content</strong> — with the last two years focused specifically on content strategy, copywriting, and AI-assisted content operations for technology and cybersecurity companies.</p>
+      <p>My specialty is translating <strong>technical complexity into buyer-focused language</strong>: blogs, thought leadership, email sequences, and campaign copy that speaks to decision-makers without oversimplifying what matters.</p>
+      <p>I use <strong>AI tools strategically</strong> — Claude, ChatGPT, Jasper — as a creative accelerator for research, ideation, and repurposing. The strategy, structure, and final voice are always human.</p>
+    </div>
+    <div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number">10+</div><div class="stat-label">Years ops, PM &amp; content experience</div></div>
+        <div class="stat-card"><div class="stat-number">2+</div><div class="stat-label">Years B2B content, copy &amp; AI ops</div></div>
+        <div class="stat-card"><div class="stat-number">B2B</div><div class="stat-label">SaaS · Cybersecurity · Tech</div></div>
+        <div class="stat-card"><div class="stat-number">ES/EN</div><div class="stat-label">Bilingual production</div></div>
+      </div>
+      <div class="how-i-work">
+        <h3>How I work</h3>
+        <p>I start by understanding the product and the buyer: what problem it solves, how it fits into existing workflows, and what objections decision-makers already have. Then I map that insight to a clear structure — problem, impact, solution, proof — so every piece has a job to do in the funnel. I use AI as a collaborator for research and ideation, but keep humans in charge of strategy, narrative, and final quality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Selected Strategic Samples & Client Work</div>
+
+  <div class="transparency-note">
+    <p>This portfolio includes a combination of <strong>client work</strong> and <strong>strategic writing samples</strong> designed to demonstrate messaging, positioning, and funnel thinking across B2B environments. Each piece is labeled accordingly.</p>
+  </div>
+
+  <!-- PIECE 1 — CLIENT WORK -->
+  <div class="portfolio-item">
+    <div class="item-header">
+      <div class="item-category">Cold Outreach · Cybersecurity · B2B</div>
+      <span class="item-badge badge-client">Client Work (Confidential)</span>
+    </div>
+    <div class="item-title">Cold Outbound Sequence — Cybersecurity Company</div>
+    <div class="item-context">3-email prospecting sequence targeting CEOs and IT Directors in the SMB sector</div>
+    <div class="item-description">Developed and refined outreach messaging for a cybersecurity firm offering vulnerability assessments and compliance services. The challenge: technical services were being communicated in a way that didn't resonate with decision-makers. Reframed the narrative from technical features to business-level risk — improving clarity and alignment with how decision-makers evaluate security investments.</div>
+
+    <div class="strategic-frame">
+      <span class="frame-label">Strategic Frame</span>
+      <div class="frame-grid">
+        <div class="frame-item"><span class="frame-key">Objective</span><span class="frame-val">Book qualified discovery calls</span></div>
+        <div class="frame-item"><span class="frame-key">Funnel Stage</span><span class="frame-val">Problem-aware → Solution-aware</span></div>
+        <div class="frame-item"><span class="frame-key">Target Persona</span><span class="frame-val">CEOs & IT Directors, SMB companies</span></div>
+        <div class="frame-item"><span class="frame-key">Channel</span><span class="frame-val">Cold outbound email sequence</span></div>
+      </div>
+    </div>
+
+    <div class="content-preview">
+      <span class="preview-label">Email 1 of 3 — Cold outreach (excerpt)</span>
+      <div class="preview-text">
+        <p>Subject: The breach your team hasn't found yet</p>
+        <p>Most IT managers I talk to discover a security gap one of two ways: during an audit, or after an incident. Neither one is a good time.</p>
+        <p>We work with companies like yours to identify exposure before it becomes a headline — a structured assessment of your actual attack surface, mapped to the specific risks in your industry.</p>
+        <p>Worth 15 minutes to see where you stand?</p>
+      </div>
+    </div>
+    <div class="item-tags">
+      <span class="tag">Cold Email</span><span class="tag">Cybersecurity</span><span class="tag">B2B Outreach</span><span class="tag">PAS Structure</span><span class="tag">English</span>
+    </div>
+    <div class="item-result">
+      <span>Approach</span>
+      <p>Problem-led opening, no feature dump. Sequence mapped to awareness stages. Built for Instantly.ai with 3-day intervals.</p>
+    </div>
+  </div>
+
+  <!-- PIECE 2 — STRATEGIC SAMPLE -->
+  <div class="portfolio-item">
+    <div class="item-header">
+      <div class="item-category">Email Automation · Fintech · B2B</div>
+      <span class="item-badge badge-sample">Strategic Sample</span>
+    </div>
+    <div class="item-title">Fintech — Trust-Led Welcome Sequence (ES)</div>
+    <div class="item-context">5-email onboarding flow for a digital remittance platform targeting the US-LATAM corridor</div>
+    <div class="item-description">Strategic sample demonstrating how I would approach onboarding for a fintech platform focused on remittances. The audience: first-generation immigrants sending money home digitally for the first time. Tone required trust-building, cultural familiarity, and clear value positioning against traditional transfer services.</div>
+
+    <div class="strategic-frame">
+      <span class="frame-label">Strategic Frame</span>
+      <div class="frame-grid">
+        <div class="frame-item"><span class="frame-key">Objective</span><span class="frame-val">Activate first transfer, reduce drop-off</span></div>
+        <div class="frame-item"><span class="frame-key">Funnel Stage</span><span class="frame-val">Activation → Retention</span></div>
+        <div class="frame-item"><span class="frame-key">Target Persona</span><span class="frame-val">First-gen immigrants, US-LATAM corridor</span></div>
+        <div class="frame-item"><span class="frame-key">Channel</span><span class="frame-val">HubSpot onboarding automation</span></div>
+      </div>
+    </div>
+
+    <div class="content-preview">
+      <span class="preview-label">Email 2 of 5 — Trust building (excerpt)</span>
+      <div class="preview-text">
+        <p>Subject: Tu primera transferencia está protegida</p>
+        <p>Enviar dinero a casa debería sentirse seguro — no como una apuesta.</p>
+        <p>Por eso cada transferencia está respaldada por encriptación de nivel bancario, confirmación en tiempo real y soporte humano disponible cuando lo necesitas. No bots. Personas reales.</p>
+        <p>Tu familia recibe lo que prometiste. Siempre.</p>
+      </div>
+    </div>
+    <div class="item-tags">
+      <span class="tag">Email Automation</span><span class="tag">HubSpot</span><span class="tag">Fintech</span><span class="tag">LATAM Audience</span><span class="tag">Spanish</span>
+    </div>
+    <div class="item-result">
+      <span>Approach</span>
+      <p>Emotional positioning built on trust and cultural familiarity. Tone calibrated for first-generation immigrants, not generic finance copy.</p>
+    </div>
+  </div>
+
+  <!-- PIECE 3 — STRATEGIC SAMPLE -->
+  <div class="portfolio-item">
+    <div class="item-header">
+      <div class="item-category">Re-engagement · SaaS · Email</div>
+      <span class="item-badge badge-sample">Strategic Sample</span>
+    </div>
+    <div class="item-title">B2B SaaS — Churn & Reactivation Email</div>
+    <div class="item-context">4-email win-back flow targeting churned users at 30, 60, and 90-day intervals</div>
+    <div class="item-description">Strategic sample demonstrating how I would approach reactivation for a B2B project management SaaS. The challenge: re-engaging inactive users without leading with discounts, which devalues the product and attracts the wrong behavior. Led with value, product improvements, and reduced friction instead.</div>
+
+    <div class="strategic-frame">
+      <span class="frame-label">Strategic Frame</span>
+      <div class="frame-label" style="display:none"></div>
+      <div class="frame-grid">
+        <div class="frame-item"><span class="frame-key">Objective</span><span class="frame-val">Reactivate churned users without discounting</span></div>
+        <div class="frame-item"><span class="frame-key">Funnel Stage</span><span class="frame-val">Retention / Win-back</span></div>
+        <div class="frame-item"><span class="frame-key">Target Persona</span><span class="frame-val">Inactive trial users, B2B SaaS</span></div>
+        <div class="frame-item"><span class="frame-key">Channel</span><span class="frame-val">Mailchimp automated sequence</span></div>
+      </div>
+    </div>
+
+    <div class="content-preview">
+      <span class="preview-label">Email 1 of 4 — Re-engagement opener (excerpt)</span>
+      <div class="preview-text">
+        <p>Subject: You left before the good part</p>
+        <p>We noticed you haven't logged in since [date]. That's okay — timing matters.</p>
+        <p>Since you were last here, we've shipped [Feature A] and [Feature B] — built specifically around feedback from users who found onboarding too heavy.</p>
+        <p>Five minutes is enough to see if it's different now. Your workspace is still here.</p>
+      </div>
+    </div>
+    <div class="item-tags">
+      <span class="tag">Win-back</span><span class="tag">SaaS</span><span class="tag">Churn Recovery</span><span class="tag">Mailchimp</span><span class="tag">English</span>
+    </div>
+    <div class="item-result">
+      <span>Approach</span>
+      <p>Value-first, no discount until email 4. Uses curiosity and feature anchoring to re-open the conversation without urgency tactics.</p>
+    </div>
+  </div>
+
+  <!-- PIECE 4 — STRATEGIC SAMPLE -->
+  <div class="portfolio-item">
+    <div class="item-header">
+      <div class="item-category">Thought Leadership · B2B SaaS · Long-form</div>
+      <span class="item-badge badge-sample">Strategic Sample</span>
+    </div>
+    <div class="item-title">B2B SaaS — Problem-Led Blog Intro</div>
+    <div class="item-context">Opening section of a thought leadership article targeting IT leaders and security-conscious buyers</div>
+    <div class="item-description">Strategic sample demonstrating problem-led thought leadership for a B2B SaaS context. The goal: position the brand as a credible voice by articulating a real operational tension the audience faces — not by listing features or making generic claims about the product category.</div>
+
+    <div class="strategic-frame">
+      <span class="frame-label">Strategic Frame</span>
+      <div class="frame-grid">
+        <div class="frame-item"><span class="frame-key">Objective</span><span class="frame-val">Build brand authority, generate inbound interest</span></div>
+        <div class="frame-item"><span class="frame-key">Funnel Stage</span><span class="frame-val">Awareness → Consideration</span></div>
+        <div class="frame-item"><span class="frame-key">Target Persona</span><span class="frame-val">IT Directors, CIOs, security-aware buyers</span></div>
+        <div class="frame-item"><span class="frame-key">Channel</span><span class="frame-val">Company blog / LinkedIn distribution</span></div>
+      </div>
+    </div>
+
+    <div class="content-preview">
+      <span class="preview-label">Article opening (excerpt)</span>
+      <div class="preview-text">
+        <p>Most IT leaders assume their most secure systems are the ones that handle sensitive data. They're usually wrong.</p>
+        <p>In many organizations, the biggest risk doesn't come from careless people — it comes from software built for efficiency first and security second. Tools that were never designed for today's threat landscape end up holding your most critical data together with duct tape.</p>
+        <p>For a SaaS platform, that gap shows up as silent churn, stalled deals, and long sales cycles with security teams. In this article, we break down where those gaps typically appear — and how tightening your product's security story can turn a liability into a revenue driver.</p>
+      </div>
+    </div>
+    <div class="item-tags">
+      <span class="tag">Thought Leadership</span><span class="tag">B2B SaaS</span><span class="tag">Long-form</span><span class="tag">C-level Audience</span><span class="tag">English</span>
+    </div>
+    <div class="item-result">
+      <span>Approach</span>
+      <p>Opens counterintuitively, builds credibility through specificity, closes with a business-level value frame. No generic industry copy.</p>
+    </div>
+  </div>
+
+</section>
+
+<section>
+  <div class="section-label">Skills & Tools</div>
+  <div class="skills-grid">
+    <div class="skill-block">
+      <h3>Content & Strategy</h3>
+      <ul>
+        <li>B2B SaaS Content Writing</li><li>Thought Leadership</li><li>Blog Strategy</li>
+        <li>Campaign Copywriting</li><li>Email Sequence Design</li>
+        <li>Editorial Calendar Management</li><li>SEO Fundamentals</li><li>Narrative Design</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <h3>Platforms & Tools</h3>
+      <ul>
+        <li>HubSpot (Content, Email, CRM)</li><li>Mailchimp</li><li>Instantly.ai</li>
+        <li>Apollo.io</li><li>LinkedIn Sales Navigator</li>
+        <li>Notion · Trello · ClickUp</li><li>Canva · Metricool</li><li>Google Workspace</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <h3>AI-Enhanced Workflow</h3>
+      <ul>
+        <li>Claude (primary)</li><li>ChatGPT</li><li>Jasper AI</li>
+        <li>Google Gemini</li><li>Prompt Engineering</li>
+        <li>AI-assisted Research</li><li>Editorial Quality Control</li><li>Content Automation Flows</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Certifications</div>
+  <div class="cert-grid">
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Content Marketing Certification</div><div class="cert-org">HubSpot Academy · 2024</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Email Marketing Certification</div><div class="cert-org">HubSpot Academy · 2024</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Google AI Essentials & Prompting Essentials</div><div class="cert-org">Google / Coursera · 2025</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">WomenCISO Generation 4</div><div class="cert-org">AI & Cybersecurity Leadership · 2025</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Strategic & Digital Marketing Program</div><div class="cert-org">Universidad de los Andes · 2024</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Scrum Foundation Professional (SFPC™)</div><div class="cert-org">CertiProf · 2025</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Design Sprint Professional (DSPC™)</div><div class="cert-org">CertiProf · 2025</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Specialization in Project Management</div><div class="cert-org">UNAD Colombia · 2022</div></div></div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="section-label" style="justify-content: center; margin-bottom: 32px;">Let's work together</div>
+  <h2>Ready when you are.</h2>
+  <p>Available for freelance, contract, and long-term remote engagements. Particularly interested in long-term collaborations with B2B SaaS and technology teams that value clear positioning, structured thinking, and content aligned to real business goals.</p>
+  <div class="contact-links">
+    <a href="mailto:margarita.mogollonc@gmail.com" class="contact-link primary">margarita.mogollonc@gmail.com</a>
+    <a href="https://linkedin.com/in/margaritamogolloncaro" class="contact-link">LinkedIn</a>
+    <a href="tel:+573186670827" class="contact-link">+57 318 667 0827</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Margarita Mogollón</div>
+  <p>B2B Content Strategist & Writer · Cartagena, Colombia · 2026</p>
+</footer>
+
+</body>
+</html>
