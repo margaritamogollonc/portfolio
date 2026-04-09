@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margarita Mogollón — Project Manager Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:      #1B2A4A;
+  --navy-mid:  #243659;
+  --navy-light:#334D73;
+  --teal:      #0D9488;
+  --teal-mid:  #0F766E;
+  --teal-light:#F0FDFA;
+  --teal-pale: #CCFBF1;
+  --red-light: #FEF2F2;
+  --gray-dark: #2C2C2C;
+  --gray-mid:  #6B7280;
+  --gray-soft: #9CA3AF;
+  --gray-light:#E5E9EF;
+  --gray-bg:   #F4F6F9;
+  --white:     #FFFFFF;
+  --rule:      #D1D9E3;
+  --accent:    #0D9488;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--gray-dark);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ══════════════════════════════════════
+   COVER
+══════════════════════════════════════ */
+.cover {
+  background: var(--navy);
+  padding: 88px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-circle-1 {
+  position: absolute;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+  top: -160px; right: -120px;
+  pointer-events: none;
+}
+
+.cover-circle-2 {
+  position: absolute;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.04);
+  bottom: -80px; left: -60px;
+  pointer-events: none;
+}
+
+.cover .page { position: relative; z-index: 1; }
+
+.cover-eyebrow {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.cover-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(40px, 5vw, 58px);
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.cover-role {
+  font-size: 17px;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.cover-transfer {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  margin-bottom: 48px;
+  font-style: italic;
+  border-left: 2px solid var(--teal);
+  padding-left: 14px;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.cover-rule {
+  width: 40px; height: 2px;
+  background: var(--teal);
+  margin-bottom: 32px;
+}
+
+.cover-bio {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  max-width: 580px;
+  font-weight: 300;
+  line-height: 1.85;
+  margin-bottom: 56px;
+}
+
+.cover-stats {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 44px;
+  margin-bottom: 52px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat strong {
+  display: block;
+  font-family: 'DM Serif Display', serif;
+  font-size: 44px;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat span {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.cover-contact {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 28px;
+}
+
+.cover-contact a,
+.cover-contact span {
+  font-size: 13px;
+  color: rgba(255,255,255,0.42);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cover-contact a:hover { color: rgba(255,255,255,0.75); }
+
+/* ══════════════════════════════════════
+   SECTIONS
+══════════════════════════════════════ */
+section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--rule);
+}
+section:last-child { border-bottom: none; padding-bottom: 0; }
+
+.section-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gray-soft);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 4vw, 36px);
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 36px;
+}
+
+.section-title .teal { color: var(--teal); }
+
+.section-lead {
+  font-size: 15.5px;
+  color: var(--gray-mid);
+  max-width: 620px;
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+/* ══════════════════════════════════════
+   VALUE CARDS
+══════════════════════════════════════ */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--gray-light);
+}
+
+.value-card {
+  background: var(--white);
+  padding: 36px 28px;
+  transition: background 0.2s;
+}
+
+.value-card:hover { background: var(--gray-bg); }
+
+.value-icon {
+  width: 36px; height: 36px;
+  margin-bottom: 20px;
+  color: var(--navy);
+}
+
+.value-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+
+.value-card p {
+  font-size: 13.5px;
+  color: var(--gray-mid);
+  line-height: 1.75;
+}
+
+/* ══════════════════════════════════════
+   DIRECTOR WORKFLOW
+══════════════════════════════════════ */
+.director-flow {
+  background: var(--navy);
+  padding: 40px 36px;
+  margin-top: 48px;
+}
+
+.flow-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.flow-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  padding: 20px 16px 20px 20px;
+  background: rgba(255,255,255,0.06);
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.flow-step:first-child {
+  border-left: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.flow-step:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.flow-step::after { display: none; }
+
+.step-num {
+  width: 28px; height: 28px;
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.step-desc {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   IMPACT DASHBOARD
+══════════════════════════════════════ */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--gray-light);
+}
+
+.impact-card {
+  background: var(--navy);
+  padding: 36px 20px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.impact-card:hover { background: var(--navy-mid); }
+.impact-card.teal-card { background: var(--teal); }
+.impact-card.teal-card:hover { background: var(--teal-mid); }
+
+.impact-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 44px;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.impact-label {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.55;
+}
+
+/* ══════════════════════════════════════
+   CASE NAVIGATOR
+══════════════════════════════════════ */
+.case-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.case-nav-pill {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--gray-mid);
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-light);
+  padding: 6px 14px;
+  text-decoration: none;
+  transition: all 0.18s;
+  cursor: pointer;
+}
+
+.case-nav-pill:hover {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
+/* ══════════════════════════════════════
+   CASE STUDIES
+══════════════════════════════════════ */
+.case {
+  padding-bottom: 64px;
+  margin-bottom: 64px;
+  border-bottom: 1px solid var(--gray-bg);
+  scroll-margin-top: 32px;
+}
+.case:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+.case-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 72px;
+  color: var(--gray-light);
+  line-height: 1;
+  margin-bottom: -8px;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+.case-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.case-tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 700;
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-light);
+  padding: 4px 10px;
+  margin-bottom: 12px;
+}
+
+.case-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(22px, 3vw, 27px);
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.case-sub {
+  font-size: 13px;
+  color: var(--gray-soft);
+  font-style: italic;
+}
+
+.kpi-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 118px;
+}
+
+.kpi-box {
+  background: var(--navy);
+  color: var(--white);
+  padding: 14px 16px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.kpi-box:hover { background: var(--navy-mid); }
+
+.kpi-box strong {
+  display: block;
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.kpi-box span {
+  font-size: 9.5px;
+  opacity: 0.55;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* PSR grid */
+.psr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--gray-light);
+  margin-bottom: 28px;
+}
+
+.psr-block {
+  background: var(--white);
+  padding: 24px 22px;
+}
+
+.psr-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-soft);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.psr-label::before {
+  content: '';
+  display: block;
+  width: 12px; height: 2px;
+  background: var(--navy);
+  flex-shrink: 0;
+}
+
+.psr-block:nth-child(1) .psr-label { color: #DC2626; }
+.psr-block:nth-child(1) .psr-label::before { background: #DC2626; }
+.psr-block:nth-child(2) .psr-label { color: var(--navy); }
+.psr-block:nth-child(2) .psr-label::before { background: var(--navy); }
+.psr-block:nth-child(3) .psr-label { color: var(--teal-mid); }
+.psr-block:nth-child(3) .psr-label::before { background: var(--teal); }
+
+.psr-block p {
+  font-size: 13.5px;
+  color: var(--gray-dark);
+  line-height: 1.75;
+}
+
+/* Director note */
+.director-note {
+  background: #EEF2F8;
+  border-left: 3px solid var(--navy);
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--navy);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.director-note strong { font-style: normal; }
+
+/* Risk table */
+.risk-table {
+  margin-bottom: 24px;
+}
+
+.risk-thead {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  gap: 16px;
+  padding: 8px 0;
+  font-size: 9.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray-soft);
+  font-weight: 700;
+  border-bottom: 2px solid var(--teal);
+  margin-bottom: 2px;
+}
+
+.risk-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--gray-bg);
+  font-size: 13.5px;
+}
+
+.risk-row:last-child { border-bottom: none; }
+
+.risk-name {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.risk-text { color: var(--gray-dark); line-height: 1.6; }
+
+/* Phase grid */
+.phases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--gray-light);
+  margin-bottom: 24px;
+}
+
+.phase-block {
+  background: var(--white);
+  padding: 22px 20px;
+}
+
+.phase-period {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-soft);
+  margin-bottom: 8px;
+}
+
+.phase-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.phase-desc {
+  font-size: 12.5px;
+  color: var(--gray-mid);
+  line-height: 1.6;
+}
+
+/* KPI grid for case 2 */
+.kpi-inline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--gray-light);
+  margin-bottom: 24px;
+}
+
+.kpi-inline-block {
+  background: var(--white);
+  padding: 18px 20px;
+}
+
+.kpi-inline-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray-soft);
+  margin-bottom: 6px;
+}
+
+.kpi-inline-text {
+  font-size: 13px;
+  color: var(--gray-dark);
+  line-height: 1.6;
+}
+
+/* Tool tags */
+.tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.tool-tag {
+  font-size: 11.5px;
+  background: var(--gray-bg);
+  color: var(--navy);
+  padding: 4px 12px;
+  font-weight: 500;
+  border: 1px solid var(--gray-light);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.tool-tag:hover {
+  background: var(--gray-light);
+  border-color: var(--navy);
+}
+
+/* ══════════════════════════════════════
+   METHODOLOGY
+══════════════════════════════════════ */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--gray-light);
+  margin-top: 32px;
+}
+
+.method-card {
+  background: var(--white);
+  padding: 28px 26px;
+  transition: background 0.2s;
+}
+
+.method-card:hover { background: var(--gray-bg); }
+
+.method-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  letter-spacing: 0.01em;
+}
+
+.method-card ul { list-style: none; }
+
+.method-card ul li {
+  font-size: 13.5px;
+  color: var(--gray-mid);
+  padding: 4px 0 4px 16px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.method-card ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--navy);
+}
+
+/* ══════════════════════════════════════
+   CERTIFICATIONS
+══════════════════════════════════════ */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--gray-light);
+  margin-top: 32px;
+}
+
+.cert-card {
+  background: var(--white);
+  padding: 22px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: background 0.2s;
+}
+
+.cert-card:hover { background: var(--gray-bg); }
+
+.cert-dot {
+  width: 8px; height: 8px;
+  background: var(--navy);
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.cert-card h4 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.cert-issuer {
+  font-size: 12px;
+  color: var(--gray-soft);
+}
+
+.cert-featured {
+  background: var(--navy);
+  padding: 22px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: background 0.2s;
+}
+
+.cert-featured:hover { background: var(--navy-mid); }
+
+.cert-featured .cert-dot { background: rgba(255,255,255,0.5); }
+
+.cert-featured h4 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.cert-featured .cert-issuer { color: rgba(255,255,255,0.42); }
+
+/* ══════════════════════════════════════
+   CTA
+══════════════════════════════════════ */
+.cta {
+  background: var(--navy);
+  padding: 72px 0 80px;
+  border-bottom: none;
+}
+
+.cta .section-eyebrow { color: rgba(255,255,255,0.3); }
+.cta .section-title { color: var(--white); }
+
+.cta-body {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+  max-width: 540px;
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 44px;
+}
+
+.cta-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-link {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.cta-link:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+/* ══════════════════════════════════════
+   TESTIMONIALS
+══════════════════════════════════════ */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--gray-light);
+  margin-top: 32px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: background 0.2s;
+}
+
+.testimonial-card:hover { background: var(--gray-bg); }
+
+.testimonial-card.featured {
+  background: var(--navy);
+  grid-column: span 2;
+}
+
+.testimonial-card.featured:hover { background: var(--navy-mid); }
+
+.testimonial-quote {
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--gray-dark);
+  font-style: italic;
+  flex: 1;
+}
+
+.testimonial-card.featured .testimonial-quote {
+  color: rgba(255,255,255,0.75);
+  font-size: 15.5px;
+}
+
+.testimonial-mark {
+  font-family: 'DM Serif Display', serif;
+  font-size: 48px;
+  color: var(--gray-light);
+  line-height: 1;
+  margin-bottom: -12px;
+}
+
+.testimonial-card.featured .testimonial-mark {
+  color: rgba(255,255,255,0.15);
+}
+
+.testimonial-author {
+  border-top: 1px solid var(--gray-light);
+  padding-top: 16px;
+}
+
+.testimonial-card.featured .testimonial-author {
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.testimonial-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+
+.testimonial-card.featured .testimonial-name { color: var(--white); }
+
+.testimonial-role {
+  font-size: 11.5px;
+  color: var(--gray-soft);
+  line-height: 1.5;
+}
+
+.testimonial-card.featured .testimonial-role { color: rgba(255,255,255,0.42); }
+
+.testimonial-badge {
+  display: inline-block;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-light);
+  padding: 3px 8px;
+  margin-top: 6px;
+}
+
+.testimonial-card.featured .testimonial-badge {
+  color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+
+@media (max-width: 720px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial-card.featured { grid-column: span 1; }
+}
+
+/* ══════════════════════════════════════
+   CONFIDENTIALITY
+══════════════════════════════════════ */
+.conf-note {
+  background: var(--gray-bg);
+  padding: 16px 48px;
+  font-size: 12px;
+  color: var(--gray-soft);
+  text-align: center;
+  font-style: italic;
+  border-top: 1px solid var(--gray-light);
+}
+
+/* ══════════════════════════════════════
+   EDUCATION BLOCK (no inline styles)
+══════════════════════════════════════ */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--gray-light);
+  margin-bottom: 2px;
+}
+
+.edu-featured {
+  background: var(--navy);
+  padding: 28px 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  grid-column: span 2;
+}
+
+.edu-featured-icon {
+  width: 20px; height: 20px;
+  color: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.edu-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.edu-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.edu-meta {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+
+.edu-secondary {
+  background: var(--white);
+  padding: 24px 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.edu-secondary h4 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+/* ══════════════════════════════════════
+   BEFORE / AFTER BLOCK
+══════════════════════════════════════ */
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--gray-light);
+  margin-bottom: 24px;
+}
+
+.ba-before {
+  background: var(--red-light);
+  padding: 22px 24px;
+  border-top: 3px solid #DC2626;
+}
+
+.ba-after {
+  background: var(--teal-light);
+  padding: 22px 24px;
+  border-top: 3px solid var(--teal);
+}
+
+.ba-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.ba-before .ba-label { color: #DC2626; }
+.ba-after .ba-label { color: var(--teal-mid); }
+
+.ba-item {
+  font-size: 13px;
+  color: var(--gray-dark);
+  padding: 5px 0;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--gray-bg);
+}
+
+.ba-item:last-child { border-bottom: none; }
+
+.ba-before .ba-item::before {
+  content: '✕';
+  position: absolute;
+  left: 0;
+  font-size: 9px;
+  color: #DC2626;
+  top: 7px;
+}
+
+.ba-after .ba-item::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  font-size: 10px;
+  color: var(--teal);
+  top: 6px;
+}
+
+@media (max-width: 720px) {
+  .before-after { grid-template-columns: 1fr; }
+  .edu-featured { grid-column: span 1; }
+  .edu-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 720px) {
+  .page { padding: 0 24px; }
+  .cover { padding: 64px 0 56px; }
+  .cover-stats { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .value-grid { grid-template-columns: 1fr; }
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+  .psr { grid-template-columns: 1fr; }
+  .case-header { grid-template-columns: 1fr; }
+  .kpi-stack { flex-direction: row; }
+  .method-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .phases { grid-template-columns: 1fr; }
+  .kpi-inline { grid-template-columns: 1fr; }
+  .flow-steps { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+  .flow-step:first-child { border-radius: 4px 0 0 0; }
+  .flow-step:last-child { border-radius: 0 0 4px 0; }
+  .flow-step::after { display: none; }
+  .risk-thead, .risk-row { grid-template-columns: 1fr; }
+  .risk-thead { display: none; }
+}
+
+@media (max-width: 480px) {
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+  .cover-stats { gap: 16px; }
+  .cover-contact { gap: 14px; }
+}
+
+@media print {
+  body { font-size: 13px; }
+  .cover { padding: 56px 0 48px; }
+  section { padding: 52px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ COVER ══════ -->
+<div class="cover">
+  <div class="cover-circle-1"></div>
+  <div class="cover-circle-2"></div>
+  <div class="page">
+    <p class="cover-eyebrow">Portfolio · Project Manager &amp; Operations · 2026</p>
+    <h1 class="cover-name">Margarita Rosa<br>Mogollón Caro</h1>
+    <p class="cover-role">Project Manager &amp; Operations Strategist</p>
+    <p class="cover-transfer">Mi experiencia en salud me entrenó para operar en entornos de alta exigencia, trazabilidad crítica y múltiples stakeholders — exactamente lo que requiere una empresa digital que escala rápido.</p>
+    <div class="cover-rule"></div>
+    <p class="cover-bio">
+      Este portafolio no muestra solo qué logré — muestra cómo pienso, cómo organizo 
+      y cómo aseguro que las decisiones del director se conviertan en ejecución real, 
+      sin que tenga que perseguir cada detalle.
+    </p>
+    <div class="cover-stats">
+      <div class="stat">
+        <strong>10+</strong>
+        <span>Años de experiencia</span>
+      </div>
+      <div class="stat">
+        <strong>27</strong>
+        <span>Oficinas coordinadas</span>
+      </div>
+      <div class="stat">
+        <strong>5</strong>
+        <span>Casos documentados</span>
+      </div>
+    </div>
+    <div class="cover-contact">
+      <span>Cartagena, Colombia · Remoto</span>
+      <a href="mailto:margarita.mogollonc@gmail.com">margarita.mogollonc@gmail.com</a>
+      <a href="https://linkedin.com/in/margaritamogollon">LinkedIn</a>
+      <a href="https://margaritamogollonc.github.io/portfolio">Portfolio Web</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ PROPUESTA DE VALOR ══════ -->
+<section>
+  <div class="page">
+    <p class="section-eyebrow">Por qué contratarme</p>
+    <h2 class="section-title">Lo que aporto como brazo<br>derecho del director</h2>
+    <p class="section-lead">No improviso. Diseño sistemas. Cuando llega una idea sin estructura, la convierto en plan. Cuando hay caos operativo, construyo el orden sin que el director tenga que supervisar cada paso.</p>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25A2.25 2.25 0 0113.5 8.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/>
+        </svg>
+        <h3>Organizo el caos</h3>
+        <p>Traduzco ideas y directrices en planes de acción con responsables, cronogramas y seguimiento sistemático. Sin fricción, sin retrasos innecesarios.</p>
+      </div>
+      <div class="value-card">
+        <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <h3>Me anticipo a los problemas</h3>
+        <p>Detecto cuellos de botella y desviaciones antes de que escalen. Implemento correctivos sin esperar instrucción — eso libera tiempo real del director.</p>
+      </div>
+      <div class="value-card">
+        <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+        </svg>
+        <h3>IA como ventaja operativa</h3>
+        <p>Integro Perplexity, Claude, ChatGPT y Gemini para investigación estratégica, síntesis de información y reportes ejecutivos. Domino diversos ecosistemas de LLMs para automatizar flujos documentales, reduciendo el tiempo de producción operativa en más del 40%.</p>
+      </div>
+    </div>
+
+    <!-- Director workflow -->
+    <div class="director-flow">
+      <p class="flow-label">Cómo trabajo con el director</p>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <p class="step-title">Captura de ideas</p>
+          <p class="step-desc">Recibo lineamientos o ideas del director sin estructura</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <p class="step-title">Priorización</p>
+          <p class="step-desc">Identifico qué es urgente vs. importante</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <p class="step-title">Plan de acción</p>
+          <p class="step-desc">Asigno responsables, plazos y criterios de éxito</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <p class="step-title">Seguimiento</p>
+          <p class="step-desc">Monitoreo avance sin que el director tenga que preguntar</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">5</div>
+          <p class="step-title">Reporte ejecutivo</p>
+          <p class="step-desc">Entrego síntesis lista para decisión</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ DASHBOARD ══════ -->
+<section style="padding: 0; border-bottom: none;">
+  <div class="page" style="padding-top: 0; padding-bottom: 0; max-width: 100%; padding-left: 0; padding-right: 0;">
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-number">35%</div>
+        <div class="impact-label">Reducción en tiempos de gestión operativa</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-number">30%</div>
+        <div class="impact-label">Mejora en trazabilidad documental</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-number">40%</div>
+        <div class="impact-label">Reducción tiempo documental con IA</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-number">98%</div>
+        <div class="impact-label">Cumplimiento de estándares de calidad</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CASOS DE ESTUDIO ══════ -->
+<section>
+  <div class="page">
+    <p class="section-eyebrow">Evidencia de trabajo real</p>
+    <h2 class="section-title">Casos que demuestran<br>cómo ejecuto</h2>
+
+    <nav class="case-nav" aria-label="Navegar entre casos">
+      <a class="case-nav-pill" href="#caso1">01 · Coordinación Regional</a>
+      <a class="case-nav-pill" href="#caso2">02 · Sistema de Calidad</a>
+      <a class="case-nav-pill" href="#caso3">03 · Product Owner SaaS</a>
+      <a class="case-nav-pill" href="#caso4">04 · A La Mesa</a>
+      <a class="case-nav-pill" href="#caso5">05 · Propuesta Clínica</a>
+    </nav>
+
+    <!-- CASO 1 -->
+    <div class="case" id="caso1">
+      <p class="case-number">01</p>
+      <div class="case-header">
+        <div>
+          <span class="case-tag">Coordinación Operativa Regional · Sector Salud Regulado · 3 Años · Reporte Directo a Dirección</span>
+          <h3 class="case-title">Coordinación Operativa de Sucursal Regional —<br>Red de 27 Oficinas en el Departamento de Bolívar</h3>
+          <p class="case-sub">EPS del sector salud — identidad anonimizada · Cargo oficial: Asistente de Gerencia Regional · Rol real: Líder del Área Administrativa</p>
+        </div>
+        <div class="kpi-stack">
+          <div class="kpi-box"><strong>35%</strong><span>Reducción tiempos operativos</span></div>
+          <div class="kpi-box"><strong>30%</strong><span>Mejora trazabilidad</span></div>
+        </div>
+      </div>
+
+      <div class="director-note">
+        <strong>Contexto real del rol:</strong> El título oficial era "Asistente de Gerencia." El trabajo real fue liderar el área administrativa completa de una sucursal regional con 27 oficinas distribuidas en Bolívar — incluyendo equipo directo de 15 personas, gestión presupuestal, infraestructura, compras, inventarios, comisiones de viaje, enlace con todas las áreas funcionales y reporte directo a gerencia regional y nivel nacional.
+      </div>
+
+      <div class="psr">
+        <div class="psr-block">
+          <p class="psr-label">El problema</p>
+          <p>Sucursal regional con 27 oficinas (UMAs, satélites y sede principal) operando sin estándares comunes, sin trazabilidad presupuestal, con solicitudes de bienes y servicios sin estructura, y procesos administrativos que generaban cuellos de botella en la toma de decisiones de gerencia.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">Mi intervención</p>
+          <p>Asumí la coordinación operativa completa: lideré equipo de 15 personas, estructuré el POA consolidando necesidades de todas las áreas antes de escalar a nivel nacional, diseñé SOPs y diagramas BPMN, implementé tableros de KPIs ejecutivos, gestioné apertura y traslado de oficinas, y actué como enlace único entre gerencia, áreas funcionales y equipo administrativo nacional.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">El resultado</p>
+          <p>Reducción del 35% en tiempos de gestión operativa. Incremento del 30% en trazabilidad documental. Digitalización del archivo operativo completo. Dirección con visibilidad en tiempo real sobre todos los frentes de la sucursal.</p>
+        </div>
+      </div>
+
+      <div class="before-after">
+        <div class="ba-before">
+          <p class="ba-label">Antes</p>
+          <p class="ba-item">27 oficinas sin estándares operativos comunes</p>
+          <p class="ba-item">Solicitudes de bienes y servicios sin estructura ni justificación</p>
+          <p class="ba-item">Presupuesto desorganizado — áreas pedían sin tener asignación</p>
+          <p class="ba-item">Gerencia gestionando operaciones que podían delegarse</p>
+        </div>
+        <div class="ba-after">
+          <p class="ba-label">Después</p>
+          <p class="ba-item">SOPs, BPMN y manuales unificados para toda la red</p>
+          <p class="ba-item">Sistema de solicitudes centralizado y escalable a nivel nacional</p>
+          <p class="ba-item">POA estructurado por área antes de aprobación nacional</p>
+          <p class="ba-item">35% menos tiempo operativo · 30% más trazabilidad documental</p>
+        </div>
+      </div>
+
+      <p style="font-size:12px; font-weight:700; color:var(--navy); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:12px; margin-top:24px;">Frentes de gestión simultáneos</p>
+      <div class="kpi-inline" style="margin-bottom:24px;">
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Equipo y operaciones</p>
+          <p class="kpi-inline-text">15 personas a cargo directo · conductores, servicios generales, auxiliar sistemas, mantenimiento, recepción · coordinación de gestores en 27 oficinas</p>
+        </div>
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Infraestructura y logística</p>
+          <p class="kpi-inline-text">Aperturas, traslados y remodelaciones de oficinas · gestión de proveedores · inventarios · papelería, aseo y cafetería para toda la red · comisiones de viaje</p>
+        </div>
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Presupuesto y control</p>
+          <p class="kpi-inline-text">Consolidación del POA de todas las áreas · caja menor y tarjeta corporativa · control presupuestal · enlace con equipo administrativo nacional</p>
+        </div>
+      </div>
+
+      <div class="risk-table">
+        <p style="font-size:12px; font-weight:700; color:var(--navy); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:10px;">Gestión de riesgos — Plan de Acción ISO documentado</p>
+        <div class="risk-thead">
+          <span>Riesgo identificado</span>
+          <span>Impacto potencial</span>
+          <span>Acción correctiva aplicada</span>
+        </div>
+        <div class="risk-row">
+          <span class="risk-name">Descontrol de cajas menores</span>
+          <span class="risk-text">Gastos no autorizados, desgaste administrativo en contabilización</span>
+          <span class="risk-text">Mesas de trabajo con tesorería nacional, centralización de aprobaciones, capacitación a líderes de área</span>
+        </div>
+        <div class="risk-row">
+          <span class="risk-name">Baja ejecución presupuestal</span>
+          <span class="risk-text">Rubros vencidos sin ejecutar, actividades sin recursos asignados</span>
+          <span class="risk-text">Seguimiento mensual del POA, replanteamiento de rubros no contemplados, notificación oportuna a nivel nacional</span>
+        </div>
+        <div class="risk-row">
+          <span class="risk-name">Desorganización de inventarios</span>
+          <span class="risk-text">Activos no registrados, pérdida de elementos, sin control de entradas y salidas</span>
+          <span class="risk-text">Diseño de formato interno de inventario, jornadas de actualización en Inventory Solutions, reasignación de responsables</span>
+        </div>
+        <div class="risk-row">
+          <span class="risk-name">Solicitudes por canales no formales</span>
+          <span class="risk-text">Gestores insatisfechos, solicitudes perdidas, sin trazabilidad de respuesta</span>
+          <span class="risk-text">Canal único de WhatsApp, videoconferencias de seguimiento, compromisos documentados</span>
+        </div>
+      </div>
+
+      <div class="tools-row">
+        <span class="tool-tag">BPMN</span>
+        <span class="tool-tag">SOPs y manuales operativos</span>
+        <span class="tool-tag">Tableros KPI ejecutivos</span>
+        <span class="tool-tag">Plan de Acción ISO</span>
+        <span class="tool-tag">POA / Control presupuestal</span>
+        <span class="tool-tag">Inventory Solutions</span>
+        <span class="tool-tag">Google Workspace</span>
+        <span class="tool-tag">Smart Budget</span>
+      </div>
+    </div>
+
+    <!-- CASO 2 -->
+    <div class="case" id="caso2">
+      <p class="case-number">02</p>
+      <div class="case-header">
+        <div>
+          <span class="case-tag">Gestión del SGC · Auditoría ISO · Comités Estratégicos · PQR · Sector Salud Regulado</span>
+          <h3 class="case-title">Coordinación del Sistema de Gestión<br>de Calidad y Comités de la Sucursal</h3>
+          <p class="case-sub">EPS del sector salud — identidad anonimizada · Formación: Diplomado en Auditoría ISO 9001 + Auditor Interno ISO 45001 · ICONTEC</p>
+        </div>
+        <div class="kpi-stack">
+          <div class="kpi-box"><strong>98%</strong><span>Cumplimiento SGC</span></div>
+          <div class="kpi-box"><strong>2</strong><span>Comités liderados</span></div>
+        </div>
+      </div>
+
+      <div class="director-note">
+        <strong>Contexto real del rol:</strong> El gerente regional era el responsable nominal del SGC. Yo era quien lo ejecutaba: dirigía los comités, revisaba indicadores con cada área, levantaba actas, elaboraba el documento final de cada sesión, apoyaba la construcción del PAMEC y las guías de auditoría — y cuando asumí el área administrativa, agregué los planes de acción, métricas e indicadores propios de esa área.
+      </div>
+
+      <div class="psr">
+        <div class="psr-block">
+          <p class="psr-label">El problema</p>
+          <p>Sucursal regional con obligaciones normativas ante Supersalud sin estructura interna para gestionar el SGC. Los comités existían en papel pero sin seguimiento real de indicadores, sin documentación sistemática de planes de acción y sin análisis de causa raíz en las PQR y quejas de usuarios.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">Mi intervención</p>
+          <p>Dirigí el Comité de Calidad (todas las áreas con gerencia) y el Comité de Procesos (cada líder con su área). Revisé y consolidé indicadores por área, establecí planes de acción correctivos con responsables y fechas, elaboré el documento final de cada sesión, apoyé la construcción del PAMEC y coordiné el seguimiento a PQR de Supersalud con el área de experiencia al usuario.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">El resultado</p>
+          <p>98% de cumplimiento de estándares de calidad. Comités funcionando con estructura real — no solo nominal. Indicadores con seguimiento periódico. Planes de acción con eficacia medible. PQR analizadas con causa raíz documentada y respuesta oportuna ante entes de vigilancia y control.</p>
+        </div>
+      </div>
+
+      <div class="kpi-inline" style="margin-bottom:28px;">
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Gobierno de calidad</p>
+          <p class="kpi-inline-text">Dirección de Comité de Calidad multidisciplinario · Comité de Procesos por área · actas, planes de acción y seguimiento a eficacia</p>
+        </div>
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Gestión de PQR regulatorias</p>
+          <p class="kpi-inline-text">Supervisión de canales internos y externos · análisis y clasificación de quejas · identificación de causa raíz · respuesta ante Supersalud, Contraloría y Defensoría</p>
+        </div>
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Documentación del SGC</p>
+          <p class="kpi-inline-text">Construcción del PAMEC · guías de auditoría · indicadores de desempeño por área · reportes ejecutivos para gerencia y nivel nacional</p>
+        </div>
+      </div>
+
+      <div class="risk-table">
+        <p style="font-size:12px; font-weight:700; color:var(--navy); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:10px;">Indicadores monitoreados en comités</p>
+        <div class="risk-thead">
+          <span>Dimensión</span>
+          <span>Indicadores clave</span>
+          <span>Fuente de seguimiento</span>
+        </div>
+        <div class="risk-row">
+          <span class="risk-name">Eficiencia operativa</span>
+          <span class="risk-text">Tiempo de respuesta, tasa de utilización de recursos, cumplimiento de cronogramas</span>
+          <span class="risk-text">Tableros ejecutivos y reportes de área en comité mensual</span>
+        </div>
+        <div class="risk-row">
+          <span class="risk-name">Cumplimiento normativo</span>
+          <span class="risk-text">Adherencia a protocolos, cumplimiento de estándares SGC, estado de auditorías</span>
+          <span class="risk-text">Seguimiento PAMEC, guías de auditoría, informes a nivel nacional</span>
+        </div>
+        <div class="risk-row">
+          <span class="risk-name">Experiencia del usuario</span>
+          <span class="risk-text">Índice de satisfacción, tiempo de espera, volumen y tipología de PQR</span>
+          <span class="risk-text">Canal de PQR Supersalud, coordinación con área de experiencia al usuario</span>
+        </div>
+        <div class="risk-row">
+          <span class="risk-name">Gestión del riesgo</span>
+          <span class="risk-text">Eventos adversos, incidentes operativos, no conformidades detectadas</span>
+          <span class="risk-text">Planes de acción correctivos con análisis de causa raíz y medición de eficacia</span>
+        </div>
+      </div>
+
+      <div class="tools-row">
+        <span class="tool-tag">ISO 9001 / ISO 45001</span>
+        <span class="tool-tag">PAMEC</span>
+        <span class="tool-tag">Guías de auditoría</span>
+        <span class="tool-tag">Planes de acción correctivos</span>
+        <span class="tool-tag">Análisis de causa raíz</span>
+        <span class="tool-tag">Indicadores SGC</span>
+        <span class="tool-tag">PQR Supersalud</span>
+        <span class="tool-tag">Actas de comité</span>
+        <span class="tool-tag">Excel avanzado</span>
+      </div>
+    </div>
+
+    <!-- CASO 3 — ADMINTRACKS ANONIMIZADO -->
+    <div class="case" id="caso3">
+      <p class="case-number">03</p>
+      <div class="case-header">
+        <div>
+          <span class="case-tag">Product Owner · SaaS Open-Source · Sector Gaming / Tech · 2025</span>
+          <h3 class="case-title">Plataforma SaaS — Product Owner &amp;<br>Documentación Estratégica Completa</h3>
+          <p class="case-sub">Cliente freelance · Plataforma de gestión de ligas deportivas digitales · Nombre del producto anonimizado por acuerdo de confidencialidad</p>
+        </div>
+        <div class="kpi-stack">
+          <div class="kpi-box"><strong>12</strong><span>Sprints planificados</span></div>
+          <div class="kpi-box"><strong>10</strong><span>Documentos entregados</span></div>
+        </div>
+      </div>
+
+      <div class="director-note">
+        <strong>Contexto:</strong> Contratada como "Virtual Assistant" — rol real: Product Owner completo. Diseñé y entregué toda la documentación estratégica y técnica del MVP para que el equipo de desarrollo pudiera ejecutar de forma ordenada, escalable y alineada a los objetivos del producto.
+      </div>
+
+      <div class="psr">
+        <div class="psr-block">
+          <p class="psr-label">El problema</p>
+          <p>Startup tech con idea de producto SaaS validada pero sin estructura formal de proyecto. Sin PRD, sin backlog priorizado, sin roadmap, sin plan de riesgos ni criterios de aceptación — el equipo de desarrollo no podía arrancar de forma ordenada.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">Mi intervención</p>
+          <p>Actué como Product Owner: definí visión, objetivos estratégicos y alcance del MVP. Escribí todas las épicas e historias de usuario con criterios de aceptación medibles. Diseñé roadmap de 12 sprints (24 semanas), matriz de 10 riesgos y plan de comunicación del equipo distribuido.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">El resultado</p>
+          <p>10 documentos estratégicos entregados y listos para ejecución — backlog priorizado, plan de sprints con velocidad 15–20 puntos/sprint, análisis de competencia frente a plataformas líderes del sector, QA checklist con cobertura objetivo &gt;85%.</p>
+        </div>
+      </div>
+
+      <div class="kpi-inline" style="margin-bottom:24px;">
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Definición de producto</p>
+          <p class="kpi-inline-text">PRD con épicas, historias de usuario y criterios de aceptación medibles por cada funcionalidad</p>
+        </div>
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Ejecución planificada</p>
+          <p class="kpi-inline-text">12 sprints · 24 semanas · Definition of Done definido · ceremonias Scrum estructuradas</p>
+        </div>
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Gestión estratégica</p>
+          <p class="kpi-inline-text">Análisis de competencia · Matriz de 10 riesgos con probabilidad, impacto y mitigación · Checklist QA</p>
+        </div>
+      </div>
+
+      <div class="tools-row">
+        <span class="tool-tag">PRD completo</span>
+        <span class="tool-tag">Backlog con épicas</span>
+        <span class="tool-tag">Historias de usuario</span>
+        <span class="tool-tag">Scrum / Sprint Planning</span>
+        <span class="tool-tag">Matriz de riesgos</span>
+        <span class="tool-tag">Análisis de competencia</span>
+        <span class="tool-tag">Checklist QA</span>
+        <span class="tool-tag">ClickUp</span>
+        <span class="tool-tag">GitHub</span>
+        <span class="tool-tag">Discord</span>
+      </div>
+    </div>
+
+    <!-- CASO 4 — A LA MESA -->
+    <div class="case" id="caso4">
+      <p class="case-number">04</p>
+      <div class="case-header">
+        <div>
+          <span class="case-tag">PM Digital · Product Development · Bootcamp Talento Tech 2025</span>
+          <h3 class="case-title">A La Mesa — Plataforma Digital de<br>Reservas y Experiencias en Restaurantes</h3>
+          <p class="case-sub">Proyecto de desarrollo full-stack — Bootcamp Programación Avanzada · Colombia 2025</p>
+        </div>
+        <div class="kpi-stack">
+          <div class="kpi-box"><strong>120</strong><span>Reservas en piloto</span></div>
+          <div class="kpi-box"><strong>85%</strong><span>Tasa de aprobación</span></div>
+        </div>
+      </div>
+
+      <div class="director-note">
+        <strong>Por qué importa para una empresa digital:</strong> Proyecto real desarrollado en equipo — yo lideré la documentación, la definición de requerimientos, el diseño de flujos en Figma, las pruebas de usabilidad y la presentación ejecutiva. Mi compañero ejecutó el modelo técnico. Eso es exactamente la división de roles PM / Dev en un equipo digital real.
+      </div>
+
+      <div class="psr">
+        <div class="psr-block">
+          <p class="psr-label">El problema</p>
+          <p>Los restaurantes gestionaban reservas por teléfono o en persona — generando duplicidades, falta de confirmación, mala gestión de mesas y pérdida de ingresos. Los comensales no tenían herramienta para reservar, comunicarse y dejar reseñas en un solo lugar.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">Mi intervención</p>
+          <p>Definí requerimientos y objetivos del producto. Diseñé los flujos de usuario y pantallas en Figma. Documenté la arquitectura MVC, casos de uso y criterios de aceptación. Coordiné el equipo, llevé bitácora diaria de avance y lideré pruebas de usabilidad con usuarios reales.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">El resultado</p>
+          <p>App funcional con gestión de reservas, chat en tiempo real, reseñas con fotos y panel administrativo. Piloto: 120 solicitudes gestionadas, 85% aprobación, tiempo de respuesta menor a 2 minutos, 300+ mensajes de chat y 55 reseñas publicadas.</p>
+        </div>
+      </div>
+
+      <div class="kpi-inline" style="margin-bottom:24px;">
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Reservas gestionadas</p>
+          <p class="kpi-inline-text">120 solicitudes en el primer mes de prueba piloto</p>
+        </div>
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Tiempo de respuesta</p>
+          <p class="kpi-inline-text">Menos de 2 minutos para confirmar reservas</p>
+        </div>
+        <div class="kpi-inline-block">
+          <p class="kpi-inline-label">Reseñas publicadas</p>
+          <p class="kpi-inline-text">55 reseñas con fotos · 300+ mensajes de chat</p>
+        </div>
+      </div>
+
+      <div class="tools-row">
+        <span class="tool-tag">Figma (UI/UX flows)</span>
+        <span class="tool-tag">Documentación de requerimientos</span>
+        <span class="tool-tag">Casos de uso</span>
+        <span class="tool-tag">Pruebas de usabilidad</span>
+        <span class="tool-tag">Python / Flask</span>
+        <span class="tool-tag">WebSockets</span>
+        <span class="tool-tag">JWT Auth</span>
+        <span class="tool-tag">Git / GitHub</span>
+        <span class="tool-tag">Bootstrap</span>
+      </div>
+    </div>
+
+    <!-- CASO 5 —PROPUESTA CLÍNICA -->
+    <div class="case" id="caso5">
+      <p class="case-number">05</p>
+      <div class="case-header">
+        <div>
+          <span class="case-tag">Planificación Estratégica · PM End-to-End · Consultoría</span>
+          <h3 class="case-title">Propuesta Ejecutiva para Apertura<br>de Programa Clínico Especializado</h3>
+          <p class="case-sub">Proyecto de consultoría independiente — sector salud privado</p>
+        </div>
+        <div class="kpi-stack">
+          <div class="kpi-box"><strong>3</strong><span>Fases de implementación</span></div>
+          <div class="kpi-box"><strong>36</strong><span>Meses de roadmap</span></div>
+        </div>
+      </div>
+
+      <div class="psr">
+        <div class="psr-block">
+          <p class="psr-label">El problema</p>
+          <p>Institución privada evaluando apertura de nueva unidad especializada sin estructura formal de proyecto. La dirección necesitaba un dossier ejecutivo completo para decidir la inversión.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">Mi intervención</p>
+          <p>Diseñé marco estratégico completo: análisis de mercado, roadmap de 3 fases, modelo financiero comparativo, KPI framework y gestión de riesgos. Todo documentado en formato ejecutivo para decisión directiva.</p>
+        </div>
+        <div class="psr-block">
+          <p class="psr-label">El resultado</p>
+          <p>Dossier ejecutivo de 10 secciones listo para presentación a dirección. Roadmap de 36 meses con hitos por fase. Dos modelos financieros comparativos con análisis de riesgo, ROI y escalabilidad.</p>
+        </div>
+      </div>
+
+      <div class="phases">
+        <div class="phase-block">
+          <p class="phase-period">Fase 1 · Meses 0–6</p>
+          <p class="phase-name">Fundación & Setup</p>
+          <p class="phase-desc">Desarrollo de SOPs, evaluación de infraestructura, selección de equipos y formación de equipo multidisciplinario</p>
+        </div>
+        <div class="phase-block">
+          <p class="phase-period">Fase 2 · Meses 6–18</p>
+          <p class="phase-name">Despliegue & Expansión</p>
+          <p class="phase-desc">Lanzamiento de servicios core, implementación de diagnósticos avanzados, establecimiento de flujos operativos</p>
+        </div>
+        <div class="phase-block">
+          <p class="phase-period">Fase 3 · Meses 18–36</p>
+          <p class="phase-name">Optimización & Crecimiento</p>
+          <p class="phase-desc">Expansión a procedimientos complejos, integración de telehealth, monitoreo continuo de calidad</p>
+        </div>
+      </div>
+
+      <div class="tools-row">
+        <span class="tool-tag">Planificación estratégica</span>
+        <span class="tool-tag">Análisis de mercado</span>
+        <span class="tool-tag">Modelo financiero</span>
+        <span class="tool-tag">KPI Framework</span>
+        <span class="tool-tag">Gestión de riesgos</span>
+        <span class="tool-tag">Documentación ejecutiva</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ METODOLOGÍAS ══════ -->
+<section>
+  <div class="page">
+    <p class="section-eyebrow">Cómo trabajo</p>
+    <h2 class="section-title">Herramientas y metodologías</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <h3>Metodologías y Enfoques</h3>
+        <ul>
+          <li>Scrum — marcos iterativos, sprints, ceremonias</li>
+          <li>Design Sprint — validación rápida de ideas</li>
+          <li>Agile / Híbrido / Predictivo — según contexto del proyecto</li>
+          <li>BPMN 2.0 — modelado y estandarización de procesos</li>
+          <li>ISO 9001 / ISO 45001 — gestión de calidad y auditoría</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <h3>Herramientas de PM &amp; Colaboración</h3>
+        <ul>
+          <li>Notion, ClickUp — backlog, roadmaps, documentación</li>
+          <li>Trello, Asana — tableros Kanban y seguimiento</li>
+          <li>GitHub — control de versiones y gestión de contribuciones</li>
+          <li>Slack, Zoom, Google Workspace — equipos distribuidos</li>
+          <li>Figma — flujos de usuario y wireframes</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <h3>IA Aplicada a Operaciones</h3>
+        <ul>
+          <li>Perplexity, Claude, ChatGPT, Gemini — investigación y síntesis</li>
+          <li>Automatización de flujos documentales y reportes ejecutivos</li>
+          <li>Reducción del 40%+ en tiempo de producción operativa</li>
+          <li>PMI: Generative AI for Project Managers (2026)</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <h3>Análisis y Control</h3>
+        <ul>
+          <li>Historias de usuario con criterios de aceptación medibles</li>
+          <li>Matrices de riesgos — probabilidad, impacto, mitigación</li>
+          <li>KPI frameworks y tableros de control ejecutivo</li>
+          <li>Análisis de causa raíz — planes de acción correctivos</li>
+          <li>FODA — análisis estratégico de competencia y entorno</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CERTIFICACIONES ══════ -->
+<section>
+  <div class="page">
+    <p class="section-eyebrow">Formación &amp; Credenciales</p>
+    <h2 class="section-title">Respaldo académico y certificaciones</h2>
+
+    <!-- FORMACIÓN ACADÉMICA — va primero y destacada -->
+    <div class="edu-grid">
+      <div class="edu-featured">
+        <svg class="edu-featured-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+        <div>
+          <p class="edu-eyebrow">Formación Académica</p>
+          <h4 class="edu-title">Especialización en Gestión de Proyectos</h4>
+          <p class="edu-meta">Universidad Nacional Abierta y a Distancia (UNAD) · Colombia · 2019</p>
+        </div>
+      </div>
+      <div class="edu-secondary">
+        <div class="cert-dot"></div>
+        <div>
+          <h4>Administración de Empresas</h4>
+          <p class="cert-issuer">UNAD, Colombia · 2012</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CERTIFICACIONES -->
+    <div class="cert-grid">
+      <div class="cert-featured">
+        <div class="cert-dot"></div>
+        <div>
+          <h4>Generative AI Overview for Project Managers</h4>
+          <p class="cert-issuer">Project Management Institute (PMI) · Abril 2026</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <h4>Scrum Foundation Professional (SFPC™)</h4>
+          <p class="cert-issuer">CertiProf · 2025</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <h4>Design Sprint Professional (DSPC™)</h4>
+          <p class="cert-issuer">CertiProf · 2025</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <h4>Google AI Essentials & Prompting Essentials</h4>
+          <p class="cert-issuer">Google / Coursera · 2025</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <h4>Diplomado ISO 9001 + Auditor ISO 45001</h4>
+          <p class="cert-issuer">ICONTEC Colombia</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-dot"></div>
+        <div>
+          <h4>WomenCISO Generation 4 — AI & Cybersecurity</h4>
+          <p class="cert-issuer">WomenCISO · 2025</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TESTIMONIOS ══════ -->
+<section>
+  <div class="page">
+    <p class="section-eyebrow">Líderes que lo confirman</p>
+    <h2 class="section-title">No solo lo digo yo —<br>lo dicen quienes trabajaron conmigo</h2>
+    <p class="section-lead">Estas recomendaciones son reales y están publicadas en LinkedIn. Las transcribo porque respaldan exactamente las capacidades que esta vacante requiere.</p>
+
+    <div class="testimonials-grid">
+
+      <!-- Hermes — destacado porque te manejó directamente -->
+      <div class="testimonial-card featured">
+        <div class="testimonial-mark">"</div>
+        <p class="testimonial-quote">Recomiendo ampliamente a Margarita Mogollón, con quien tuve la oportunidad de trabajar casi 3 años. Demostró amplias capacidades de gestión y liderazgo. Es disciplinada, dedicada, muy organizada y agrega valor permanentemente. Entre sus habilidades se destacan la capacidad para planear y ejecutar de manera estratégica, realizar presentaciones de impacto extraordinario, capacidad de síntesis a partir de lluvias de ideas, manejo impecable de agendas. Es capaz de hacer cumplir las asignaciones presupuestales y es sin duda alguna una excelente coequipera.</p>
+        <div class="testimonial-author">
+          <p class="testimonial-name">Hermes Echenique</p>
+          <p class="testimonial-role">Key Account Manager · Commercial Director · Sales Manager · Country Manager</p>
+          <span class="testimonial-badge">Jefe directo · 3 años de trabajo conjunto</span>
+        </div>
+      </div>
+
+      <!-- Carolina -->
+      <div class="testimonial-card">
+        <div class="testimonial-mark">"</div>
+        <p class="testimonial-quote">Margarita es una Profesional de alto rendimiento y trabajo colaborativo con grupos de interés en entornos cambiantes y resilientes, con gran experiencia en el diseño e implementación de proyectos disruptivos que aseguran la generación de valor y la excelencia Operacional.</p>
+        <div class="testimonial-author">
+          <p class="testimonial-name">Carolina Ayala Valdes</p>
+          <p class="testimonial-role">Directora Unidad de Negocios | Salud · Desarrollo de Negocios · Proyectos Estratégicos · Transformación de Negocios</p>
+          <span class="testimonial-badge">Colega senior</span>
+        </div>
+      </div>
+
+      <!-- Diana -->
+      <div class="testimonial-card">
+        <div class="testimonial-mark">"</div>
+        <p class="testimonial-quote">Excelente profesional.</p>
+        <div class="testimonial-author">
+          <p class="testimonial-name">Diana M. Silva Londoño</p>
+          <p class="testimonial-role">Directora de Asuntos Corporativos · Caribe LNG · Fundadora de Conéctate · LL.M. Fordham</p>
+          <span class="testimonial-badge">Senior · Coosalud</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CTA ══════ -->
+<section class="cta">
+  <div class="page">
+    <p class="section-eyebrow">Disponibilidad inmediata</p>
+    <h2 class="section-title">¿Organizamos el caos<br>del director juntos?</h2>
+    <p class="cta-body">
+      Disponible para integrarme de forma remota, aportando organización, 
+      priorización y seguimiento para que las decisiones se traduzcan en 
+      ejecución clara.
+    </p>
+    <div class="cta-links">
+      <a href="mailto:margarita.mogollonc@gmail.com" class="cta-link">margarita.mogollonc@gmail.com</a>
+      <a href="tel:+573186670827" class="cta-link">+57 318 667 0827</a>
+      <a href="https://linkedin.com/in/margaritamogollon" class="cta-link">LinkedIn</a>
+      <a href="https://margaritamogollonc.github.io/portfolio" class="cta-link">Portfolio Web</a>
+    </div>
+  </div>
+</section>
+
+<p class="conf-note">
+  Datos sensibles de clientes e instituciones anonimizados por ética profesional y acuerdos de confidencialidad.
+  La metodología, estructura y resultados presentados corresponden a trabajo real documentado.
+</p>
+
+</body>
+</html>
